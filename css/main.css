@@ -1,12 +1,20 @@
 
 html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 16px;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.wrapper {
+  height: 100%;
   background-image: url('../img/bg-index.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  margin: 0;
-  padding: 0;
-  height: 100%;
 }
 
 .page-header {
@@ -31,11 +39,65 @@ html, body {
   bottom: 38px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 16px;
-  font-family: 'Roboto', 'Arial', sans-serif;
-  font-weight: 400;
-  color: #ffffff;
 }
 
-.page-content {}
+.page-content {
+  padding-top: 248px;
+}
 
+.welcome {
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(18, 38, 32, .8);
+  text-align: center;
+  padding-top: 40px;
+}
+.welcome__img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+.welcome__name {
+  font-size: 28px;
+  margin-top: 0;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+.welcome__descr {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.welcome-social {
+  display: none;
+}
+
+.welcome-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+.welcome-menu__item {
+  font-size: 16px;
+  line-height: 16px;
+  border-left: 2px solid #a0b99e;
+  display: inline-block;
+  vertical-align: middle;
+}
+.welcome-menu__item:first-child {
+  border-left: 0;
+}
+.welcome-menu__link {
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  padding: 14px 31px;
+  background-color: #629055;
+}
+.welcome-menu__link:hover {
+  background-color: #49803a;
+}

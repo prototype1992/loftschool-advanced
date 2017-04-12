@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/prototype1992/loftschool-advanced/issues"
   },
-  "homepage": "https://github.com/prototype1992/loftschool-advanced#readme"
+  "homepage": "https://github.com/prototype1992/loftschool-advanced#readme",
+  "devDependencies": {
+    "webpack": "^2.3.3"
+  }
 }

@@ -1,22 +1,32 @@
 {
-  "name": "loftschool-advanced",
-  "version": "1.0.0",
-  "description": "",
+  "name": "webpack-starter",
+  "version": "0.0.1",
+  "description": "My webpack starter for web development",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack"
+    "build": "webpack --progress --colors",
+    "watch": "webpack-dev-server --progress --colors --open --inline",
+    "start": "npm run watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prototype1992/loftschool-advanced.git"
+  "author": "Shamil Alisultanov",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-latest": "^6.22.0",
+    "clean-webpack-plugin": "^0.1.15",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "2.0.0-beta.5",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.26.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.0"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/prototype1992/loftschool-advanced/issues"
-  },
-  "homepage": "https://github.com/prototype1992/loftschool-advanced#readme",
   "devDependencies": {
-    "webpack": "^2.3.3"
+    "eslint": "^3.13.1",
+    "pug": "^2.0.0-beta11",
+    "pug-loader": "^2.3.0",
+    "webpack-dev-server": "^1.16.2"
   }
 }

@@ -1,0 +1,76 @@
+
+.container {
+  max-width: 1200px;
+  @include center-block();
+  position: relative;
+  outline: 1px solid red;
+}
+
+.auth-btn {
+  @include button();
+  position: absolute;
+  top: 24px;
+  right: 100px;
+  width: 180px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+
+.user-block {
+  max-width: 380px;
+  opacity: .85;
+  @include center-block;
+  outline: 1px solid red;
+  text-align: center;
+  .user-block__image {}
+  .user-block__name {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .user-block__info {}
+}
+
+.social-block {
+  display: none;
+  .social-block__item {}
+  .social-block__link {}
+  .social-block__link--vk {}
+  .social-block__link--github {}
+  .social-block__link--linkedin {}
+}
+
+.user-menu {
+  .user-menu__list {
+    @include list-none();
+    display: table;
+  }
+  .user-menu__item {
+    display: table-cell;
+    vertical-align: middle;
+    width: 1%;
+    text-align: center;
+    border-left: 2px solid #73c8c0;
+    &:first-child {
+      border-left: 0;
+    }
+  }
+  .user-menu__link {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #00bfa5;
+    color: #ffffff;
+    &:hover {
+      background-color: #009688;
+    }
+  }
+}
+
+.copyright {
+  text-align: center;
+}

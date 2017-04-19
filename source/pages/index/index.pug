@@ -1,0 +1,35 @@
+extends ../layout
+
+block title
+	title Главная страница
+
+block content
+
+	button.auth-btn Авторизоваться
+
+	.container
+
+		.user-block
+			img.user-block__image(src='')
+			h3.user-block__name Владимир Астахов
+			p.user-block__info Личный сайт веб разработчика
+
+			ul.social-block
+				li.social-block__item
+					a.social-block__link.social-block__link--vk
+				li.social-block__item
+					a.social-block__link.social-block__link--github
+				li.social-block__item
+					a.social-block__link.social-block__link--linkedin
+
+			nav.user-menu
+				ul.user-menu__list
+					li.user-menu__item
+						a.user-menu__link(href='#') Мои работы
+					li.user-menu__item
+						a.user-menu__link(href='#') Обо мне
+					li.user-menu__item
+						a.user-menu__link(href='#') Блог
+
+		p.copyright © Владимир Астахов | создано с любовью в LoftSchool | 2016
+

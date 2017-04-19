@@ -1,64 +1,74 @@
-let webpack = require('webpack');
-let HtmlPlugin = require('html-webpack-plugin');
-let CleanWebpackPlugin = require('clean-webpack-plugin');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: '[hash].js',
-    path: './dist'
+const PATHS = {
+  source: path.join(__dirname, 'source'),
+  build: path.join(__dirname, 'build')
+};
+
+const common = {
+  // entry: {
+  //   'index': PATHS.source + '/pages/index/index.js',
+  //   'blog': PATHS.source + '/pages/blog/blog.js'
+  // },
+  entry: {
+    'index': PATHS.source + '/entry.js'
   },
-  devtool: 'source-map',
+  output: {
+    path: PATHS.build,
+    filename: '[name].js'
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      chunks: ['index'],
+      template: PATHS.source + '/pages/index/index.pug'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'blog.html',
+      chunks: ['blog'],
+      template: PATHS.source + '/pages/blog/blog.pug'
+    })
+  ],
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.(jpe?g|png|gif|svg|)$/i,
-        loader: 'file-loader?name=images/[hash].[ext]'
-      },
-      {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=fonts/[hash].[ext]'
-      },
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: 'css-loader'
-        })
-      },
       {
         test: /\.pug$/,
         loader: 'pug-loader',
         options: {
           pretty: true
         }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       }
     ]
-  },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        drop_debugger: false
-      }
-    }),
-    new ExtractTextPlugin('styles.css'),
-    new HtmlPlugin({
-      filename: 'index.html',
-      chunks: ['index'],
-      template: './src/pages/index/index.pug'
-    }),
-    new HtmlPlugin({
-      filename: 'portfolio.html',
-      chunks: ['portfolio'],
-      template: './src/pages/portfolio/portfolio.pug'
-    }),
-    new CleanWebpackPlugin(['dist'])
-  ]
+  }
+};
+
+const developmentConfig = {
+  devServer: {
+    stats: 'errors-only',
+    port: 9000
+  }
+};
+
+
+
+module.exports = function (env) {
+  if( env === 'production' ) {
+    return common;
+  }
+  if( env === 'development' ) {
+    return Object.assign(
+      {},
+      common,
+      developmentConfig
+    );
+  }
 };

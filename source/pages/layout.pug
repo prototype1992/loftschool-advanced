@@ -1,0 +1,16 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+
+		block title
+
+		block fonts
+			- var fonts = [];
+			- fonts.push('https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700,800&subset=cyrillic')
+			each font in fonts
+				link(href=font, rel='stylesheet')
+
+	body
+		.wrapper
+			block content

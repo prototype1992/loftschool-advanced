@@ -1,0 +1,16 @@
+// Миксин для создания кнопки
+@mixin button() {
+  display: inline-block;
+  font-weight: normal;
+  font-family: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  position: relative;
+  line-height: normal;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  outline: none;
+}

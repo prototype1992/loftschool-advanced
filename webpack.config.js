@@ -46,6 +46,14 @@ const common = {
           'css-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg|)$/i,
+        loader: 'file?name=images/[hash].[ext]'
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file?name=fonts/[hash].[ext]'
       }
     ]
   }

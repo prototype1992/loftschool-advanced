@@ -49,11 +49,17 @@ const common = {
       },
       {
         test: /\.(jpe?g|png|gif|svg|)$/i,
-        loader: 'file?name=images/[hash].[ext]'
+        loader: 'file-loader',
+        options: {
+          name: 'images/[name].[ext]'
+        }
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file?name=fonts/[hash].[ext]'
+        test: /\.(eot|svg|ttf|woff(2?))$/,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]'
+        }
       }
     ]
   }

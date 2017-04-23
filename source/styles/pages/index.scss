@@ -1,9 +1,16 @@
 
-.container {
+.main {
   max-width: 1200px;
+  min-height: 100%;
+  margin-bottom: -$welcomeFooterHeight;
   @include center-block();
   position: relative;
   outline: 1px solid red;
+  &--welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .auth-btn {
@@ -27,24 +34,46 @@
   @include center-block;
   outline: 1px solid red;
   text-align: center;
-  .user-block__image {}
+  background-color: #FCFCFC;
+  padding-top: 40px;
+  .user-block__image {
+    @include center-block();
+    margin-bottom: 20px;
+  }
   .user-block__name {
     margin-top: 0;
     margin-bottom: 10px;
+    font-size: 28px;
+    line-height: 28px;
+    color: #455a64;
+    font-weight: 500;
   }
-  .user-block__info {}
+  .user-block__info {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #455a64;
+    margin-top: 0;
+    margin-bottom: 34px;
+  }
 }
 
 .social-block {
-  display: none;
+  outline: 1px solid red;
+  text-align: center;
   .social-block__item {}
   .social-block__link {}
   .social-block__link--vk {}
   .social-block__link--github {}
   .social-block__link--linkedin {}
+
+  &--welcome {
+    margin-bottom: 40px;
+  }
 }
 
 .user-menu {
+  user-select: none;
   .user-menu__list {
     @include list-none();
     display: table;

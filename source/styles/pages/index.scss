@@ -2,7 +2,6 @@
 .main {
   max-width: 1200px;
   min-height: 100%;
-  margin-bottom: -$welcomeFooterHeight;
   @include center-block();
   position: relative;
   outline: 1px solid red;
@@ -10,6 +9,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    margin-bottom: -$welcomeFooterHeight;
+    padding-bottom: $welcomeFooterHeight;
   }
 }
 
@@ -94,12 +96,55 @@
     text-decoration: none;
     background-color: #00bfa5;
     color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
     &:hover {
       background-color: #009688;
     }
   }
 }
 
+.user-auth {
+  max-width: 380px;
+  opacity: .85;
+  @include center-block;
+  outline: 1px solid red;
+  text-align: center;
+  background-color: #FCFCFC;
+  padding-top: 40px;
+  color: #000000;
+}
+
 .copyright {
   text-align: center;
+}
+
+.block-title {
+  font-size: 35px;
+  color: #455a64;
+  text-transform: uppercase;
+  .block-title__inner {
+    display: inline-block;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #c5cbcd;
+      width: 22px;
+      height: 5px;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #c5cbcd;
+      width: 22px;
+      height: 5px;
+    }
+  }
 }
